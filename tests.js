@@ -147,6 +147,11 @@ let testCasesGroups = [
                 native: testArray.indexOf(6),
                 custom: testArray.myIndexOf(6),
             },
+            {
+                label: '-1',
+                native: testArray.indexOf(-1),
+                custom: testArray.myIndexOf(-1),
+            }
         ],
     }
 ];
