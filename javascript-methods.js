@@ -111,8 +111,25 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+Array.prototype.myReduce = function(callbackFn, initialValue = 0) {
+    // Check that callbackFn is a function.
+    if (typeof callbackFn !== 'function') {
+        throw new TypeError(`${callbackFn} is not a function`);
+    }
+
+    let startI = 1;
+    let accumulator = this[0];
+
+    if (initialValue) {
+        startI = 0;
+        accumulator = initialValue;
+    }
+
+    for (let i = startI; i < this.length; i++) {
+        accumulator = callbackFn(accumulator, this[i]);
+    }
+
+    return accumulator;
 };
 
 // INCLUDES //
