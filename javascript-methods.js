@@ -13,6 +13,8 @@ In this Assignment, we use the prototype constructor to add new methods to the A
  * 
  * myMap executes a passed callback function on each of the array elements.
  * 
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map MDN info on native implementation.
+ * 
  * @param {Function} callbackFn A function that is executed on each element in the array.
  * @returns {Array} An array of elements where each element is the return value of the callback function.
  */
@@ -36,6 +38,8 @@ Array.prototype.myMap = function(callbackFn) {
  * 
  * myFilter filters the array based on if the element returns true for the passed callback function.
  * 
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter MDN info on native implementation.
+ * 
  * @param {Function} callbackFn The callback function to filter with.
  * @returns {Array} An array of elements that returned true for the callback function.
  */
@@ -56,9 +60,29 @@ Array.prototype.myFilter = function(callbackFn) {
     return filteredArray;
 };
 
-// SOME //
+/**
+ * My Some.
+ * 
+ * mySome checks if at least one element in the array returns true for the passed callback function.
+ * 
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some MDN info on native implementation.
+ * 
+ * @param {Function} callbackFn 
+ * @returns {Boolean} True if at least one element in the array returns true for the callback function. False otherwise.
+ */
 Array.prototype.mySome = function(callbackFn) {
-  // Place your code here.
+    // Check that callbackFn is a function.
+    if (typeof callbackFn !== 'function') {
+        throw new TypeError(`${callbackFn} is not a function`);
+    }
+
+    for (let i = 0; i < this.length; i++) {
+        if (callbackFn(this[i])) {
+            return true;
+        }
+    }
+
+    return false;
 };
 
 // EVERY //
