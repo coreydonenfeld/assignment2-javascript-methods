@@ -108,6 +108,26 @@ let testCasesGroups = [
                 custom: testArray.myReduce((x) => x),
             }
         ],
+    },
+    {
+        group: 'myIncludes',
+        cases: [
+            {
+                label: '1',
+                native: testArray.includes(1),
+                custom: testArray.myIncludes(1),
+            },
+            {
+                label: '5',
+                native: testArray.includes(5),
+                custom: testArray.myIncludes(5),
+            },
+            {
+                label: '6',
+                native: testArray.includes(6),
+                custom: testArray.myIncludes(6),
+            },
+        ],
     }
 ];
 

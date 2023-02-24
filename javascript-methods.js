@@ -115,6 +115,8 @@ Array.prototype.myEvery = function(callbackFn) {
  * 
  * myReduce accumulates the elements in the array based on the passed callback function.
  * 
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce MDN info on native implementation.
+ * 
  * @param {Function} callbackFn 
  * @param {*} initialValue The initial value of the accumulator. If not provided, the first element in the array will be used.
  * @returns {*} The final value of the accumulator.
@@ -140,9 +142,19 @@ Array.prototype.myReduce = function(callbackFn, initialValue = 0) {
     return accumulator;
 };
 
-// INCLUDES //
+/**
+ * My Includes.
+ * 
+ * myIncludes checks if the array includes the passed search element.
+ * 
+ * @requires Array.prototype.mySome
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes MDN info on native implementation.
+ * 
+ * @param {*} searchElement 
+ * @returns True if the element is found, false otherwise.
+ */
 Array.prototype.myIncludes = function(searchElement) {
-  // Place your code here.
+    return this.mySome((element) => element === searchElement);
 };
 
 // INDEXOF //
