@@ -110,7 +110,15 @@ Array.prototype.myEvery = function(callbackFn) {
     return true;
 };
 
-// REDUCE //
+/**
+ * My Reduce.
+ * 
+ * myReduce accumulates the elements in the array based on the passed callback function.
+ * 
+ * @param {Function} callbackFn 
+ * @param {*} initialValue The initial value of the accumulator. If not provided, the first element in the array will be used.
+ * @returns {*} The final value of the accumulator.
+ */
 Array.prototype.myReduce = function(callbackFn, initialValue = 0) {
     // Check that callbackFn is a function.
     if (typeof callbackFn !== 'function') {
