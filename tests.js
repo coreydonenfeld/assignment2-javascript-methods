@@ -128,6 +128,26 @@ let testCasesGroups = [
                 custom: testArray.myIncludes(6),
             },
         ],
+    },
+    {
+        group: 'myIndexOf',
+        cases: [
+            {
+                label: '1',
+                native: testArray.indexOf(1),
+                custom: testArray.myIndexOf(1),
+            },
+            {
+                label: '5',
+                native: testArray.indexOf(5),
+                custom: testArray.myIndexOf(5),
+            },
+            {
+                label: '6',
+                native: testArray.indexOf(6),
+                custom: testArray.myIndexOf(6),
+            },
+        ],
     }
 ];
 

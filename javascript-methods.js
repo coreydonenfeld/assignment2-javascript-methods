@@ -157,7 +157,17 @@ Array.prototype.myIncludes = function(searchElement) {
     return this.mySome((element) => element === searchElement);
 };
 
-// INDEXOF //
+/**
+ * My Index Of.
+ * 
+ * myIndexOf returns the index of the passed search element.
+ * 
+ * @requires Array.prototype.myIncludes
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf MDN info on native implementation.
+ * 
+ * @param {*} searchElement 
+ * @returns {Number} The index of the search element. -1 if the element is not found.
+ */
 Array.prototype.myIndexOf = function(searchElement) {
     if (!this.myIncludes(searchElement)) {
         return -1;
