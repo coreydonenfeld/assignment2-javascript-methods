@@ -159,7 +159,15 @@ Array.prototype.myIncludes = function(searchElement) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+    if (!this.myIncludes(searchElement)) {
+        return -1;
+    }
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] === searchElement) {
+            return i;
+        }
+    }
 };
 
 // LASTINDEXOF //
