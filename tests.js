@@ -2,6 +2,7 @@ require('./javascript-methods.js');
 
 // Test cases.
 let testArray = [1, 2, 3, 4, 5];
+let testArrayDuplicates = [1, 2, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6];
 let testArrayWords = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 let testCasesGroups = [
     {
@@ -153,6 +154,26 @@ let testCasesGroups = [
                 custom: testArray.myIndexOf(-1),
             }
         ],
+    },
+    {
+        group: 'myLastIndexOf',
+        cases: [
+            {
+                label: '1',
+                native: testArrayDuplicates.lastIndexOf(1),
+                custom: testArrayDuplicates.myLastIndexOf(1),
+            },
+            {
+                label: '5',
+                native: testArrayDuplicates.lastIndexOf(5),
+                custom: testArrayDuplicates.myLastIndexOf(5),
+            },
+            {
+                label: '-3',
+                native: testArrayDuplicates.lastIndexOf(-3),
+                custom: testArrayDuplicates.myLastIndexOf(-3),
+            },
+        ]
     }
 ];
 
