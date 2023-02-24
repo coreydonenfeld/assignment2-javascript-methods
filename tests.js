@@ -34,6 +34,16 @@ let testCases = [
         native: testArrayWords.filter((word) => word.length > 7),
         custom: testArrayWords.myFilter((word) => word.length > 7),
     },
+    {
+        label: 'mySome: x > 3',
+        native: testArray.some((x) => x > 3),
+        custom: testArray.mySome((x) => x > 3),
+    },
+    {
+        label: 'mySome: x == 5',
+        native: testArray.some((x) => x == 5),
+        custom: testArray.mySome((x) => x == 5),
+    },
 ]
 testCases.forEach((testCase) => {
     console.log(testCase.label);
