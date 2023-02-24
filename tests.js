@@ -82,13 +82,21 @@ let testCasesGroups = [
 ];
 
 // Log test results.
+testCasesRan = 0;
+testCasesPassed = 0;
 testCasesGroups.forEach((testCaseGroup) => {
     console.log(`Testing ${testCaseGroup.group}`);
     testCaseGroup.cases.forEach((testCase) => {
+        passed = JSON.stringify(testCase.native) === JSON.stringify(testCase.custom);
+        testCasesRan += 1;
+        testCasesPassed += passed ? 1 : 0;
         console.log(`  ${testCase.label}`);
         console.log("  Native:", testCase.native);
         console.log("  Custom:", testCase.custom);
-        console.log("  Pass:", JSON.stringify(testCase.native) === JSON.stringify(testCase.custom));
+        console.log("  Pass:", passed);
         console.log("");
     });
 });
+console.log("Summary");
+console.log(`  Ran ${testCasesRan} test cases.`);
+console.log(`  Passed ${testCasesPassed} test cases.`);
