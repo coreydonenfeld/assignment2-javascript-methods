@@ -58,6 +58,26 @@ let testCasesGroups = [
                 custom: testArray.mySome((x) => x == 5),
             },
         ]
+    },
+    {
+        group: 'myEvery',
+        cases: [
+            {
+                label: 'x > 3',
+                native: testArray.every((x) => x > 3),
+                custom: testArray.myEvery((x) => x > 3),
+            },
+            {
+                label: 'x < 6',
+                native: testArray.every((x) => x < 6),
+                custom: testArray.myEvery((x) => x < 6),
+            },
+            {
+                label: 'x !== 0',
+                native: testArray.every((x) => x !== 0),
+                custom: testArray.myEvery((x) => x !== 0),
+            }
+        ]
     }
 ];
 
