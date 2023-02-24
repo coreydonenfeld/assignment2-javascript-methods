@@ -85,9 +85,29 @@ Array.prototype.mySome = function(callbackFn) {
     return false;
 };
 
-// EVERY //
+/**
+ * My Every.
+ * 
+ * myEvery checks that all the elements in the array return true for the passed callback function.
+ * 
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Every MDN info on native implementation.
+ * 
+ * @param {Function} callbackFn 
+ * @returns {Boolean} True if at least one element in the array returns true for the callback function. False otherwise.
+ */
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+    // Check that callbackFn is a function.
+    if (typeof callbackFn !== 'function') {
+        throw new TypeError(`${callbackFn} is not a function`);
+    }
+
+    for (let i = 0; i < this.length; i++) {
+        if (!callbackFn(this[i])) {
+            return false;
+        }
+    }
+
+    return true;
 };
 
 // REDUCE //
