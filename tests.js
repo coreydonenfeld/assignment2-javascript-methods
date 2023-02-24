@@ -78,6 +78,36 @@ let testCasesGroups = [
                 custom: testArray.myEvery((x) => x !== 0),
             }
         ]
+    },
+    {
+        group: 'myReduce',
+        cases: [
+            {
+                label: 'x + y',
+                native: testArray.reduce((x, y) => x + y),
+                custom: testArray.myReduce((x, y) => x + y),
+            },
+            {
+                label: 'x * y',
+                native: testArray.reduce((x, y) => x * y),
+                custom: testArray.myReduce((x, y) => x * y),
+            },
+            {
+                label: 'x * y, 10',
+                native: testArray.reduce((x, y) => x * y, 10),
+                custom: testArray.myReduce((x, y) => x * y, 10),
+            },
+            {
+                label: 'x + y, 40',
+                native: testArray.reduce((x, y) => x + y, 40),
+                custom: testArray.myReduce((x, y) => x + y, 40),
+            },
+            {
+                label: 'x',
+                native: testArray.reduce((x) => x),
+                custom: testArray.myReduce((x) => x),
+            }
+        ],
     }
 ];
 
