@@ -11,10 +11,10 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 /**
  * My Map.
  * 
- * My Map takes in an array of elements and executes a supplied callback function on each of those elements.
+ * myMap executes a passed callback function on each of the array elements.
  * 
- * @param {Function} callbackFn - A function that is executed on each element in the array.
- * @returns {Array} mappedArray - An array of elements where each element is the return value of the callback function.
+ * @param {Function} callbackFn A function that is executed on each element in the array.
+ * @returns {Array} An array of elements where each element is the return value of the callback function.
  */
 Array.prototype.myMap = function(callbackFn) {
     // Check that callbackFn is a function.
@@ -31,9 +31,29 @@ Array.prototype.myMap = function(callbackFn) {
     return mappedArray;
 };
 
-// FILTER //
+/**
+ * My Filter.
+ * 
+ * myFilter filters the array based on if the element returns true for the passed callback function.
+ * 
+ * @param {Function} callbackFn The callback function to filter with.
+ * @returns {Array} An array of elements that returned true for the callback function.
+ */
 Array.prototype.myFilter = function(callbackFn) {
-  // Place your code here.
+    // Check that callbackFn is a function.
+    if (typeof callbackFn !== 'function') {
+        throw new TypeError(`${callbackFn} is not a function`);
+    }
+
+    let filteredArray = [];
+
+    for (let i = 0; i < this.length; i++) {
+        if (callbackFn(this[i])) {
+            filteredArray.push(this[i]);
+        }
+    }
+
+    return filteredArray;
 };
 
 // SOME //
