@@ -182,7 +182,19 @@ Array.prototype.myIndexOf = function(searchElement) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+    if (!this.myIncludes(searchElement)) {
+        return -1;
+    }
+
+    let lastIndex = -1;
+
+    for (let i = 0; i < this.length; i++) {
+        if (this[i] === searchElement) {
+            lastIndex = i;
+        }
+    }
+
+    return lastIndex;
 };
 
 // KEYS //
