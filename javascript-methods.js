@@ -180,7 +180,17 @@ Array.prototype.myIndexOf = function(searchElement) {
     }
 };
 
-// LASTINDEXOF //
+/**
+ * My Last Index Of.
+ * 
+ * myLastIndexOf returns the last index of the passed search element.
+ * 
+ * @requires Array.prototype.myIncludes
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf MDN info on native implementation.
+ * 
+ * @param {*} searchElement 
+ * @returns The last index of the search element. -1 if the element is not found.
+ */
 Array.prototype.myLastIndexOf = function(searchElement) {
     if (!this.myIncludes(searchElement)) {
         return -1;
