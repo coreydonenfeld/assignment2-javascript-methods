@@ -8,9 +8,27 @@ The prototype constructor is used to add new methods (functions) and properties 
 In this Assignment, we use the prototype constructor to add new methods to the Array() object.
 ----------------------------------------------------------*/
 
-// MAP //
+/**
+ * My Map.
+ * 
+ * My Map takes in an array of elements and executes a supplied callback function on each of those elements.
+ * 
+ * @param {Function} callbackFn - A function that is executed on each element in the array.
+ * @returns {Array} mappedArray - An array of elements where each element is the return value of the callback function.
+ */
 Array.prototype.myMap = function(callbackFn) {
-  // Place your code here.
+    // Check that callbackFn is a function.
+    if (typeof callbackFn !== 'function') {
+        throw new TypeError(`${callbackFn} is not a function`);
+    }
+
+    let mappedArray = [];
+
+    for (let i = 0; i < this.length; i++) {
+        mappedArray[i] = callbackFn(this[i]);
+    }
+
+    return mappedArray;
 };
 
 // FILTER //
