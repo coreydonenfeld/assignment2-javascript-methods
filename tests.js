@@ -4,6 +4,8 @@ require('./javascript-methods.js');
 let testArray = [1, 2, 3, 4, 5];
 let testArrayDuplicates = [1, 2, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6];
 let testArrayWords = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+let testObject = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+let testObjectWords = { 'abc': 1, 'def': 2, 'ghi': 3, 'jkl': 4, 'mno': 5 };
 let testCasesGroups = [
     {
         group: 'myMap',
@@ -173,6 +175,36 @@ let testCasesGroups = [
                 native: testArrayDuplicates.lastIndexOf(-3),
                 custom: testArrayDuplicates.myLastIndexOf(-3),
             },
+        ]
+    },
+    {
+        group: 'myKeys',
+        cases: [
+            {
+                label: 'testObject',
+                native: Object.keys(testObject),
+                custom: Object.myKeys(testObject),
+            },
+            {
+                label: 'testObjectWords',
+                native: Object.keys(testObjectWords),
+                custom: Object.myKeys(testObjectWords),
+            },
+            {
+                label: 'testArray',
+                native: Object.keys(testArray),
+                custom: Object.myKeys(testArray),
+            },
+            {
+                label: 'testArrayWords',
+                native: Object.keys(testArrayWords),
+                custom: Object.myKeys(testArrayWords),
+            },
+            {
+                label: 'testArrayDuplicates',
+                native: Object.keys(testArrayDuplicates),
+                custom: Object.myKeys(testArrayDuplicates),
+            }
         ]
     }
 ];
