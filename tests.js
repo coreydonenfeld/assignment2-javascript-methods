@@ -206,6 +206,36 @@ let testCasesGroups = [
                 custom: Object.myKeys(testArrayDuplicates),
             }
         ]
+    },
+    {
+        group: 'myValues',
+        cases: [
+            {
+                label: 'testObject',
+                native: Object.values(testObject),
+                custom: Object.myValues(testObject),
+            },
+            {
+                label: 'testObjectWords',
+                native: Object.values(testObjectWords),
+                custom: Object.myValues(testObjectWords),
+            },
+            {
+                label: 'testArray',
+                native: Object.values(testArray),
+                custom: Object.myValues(testArray),
+            },
+            {
+                label: 'testArrayWords',
+                native: Object.values(testArrayWords),
+                custom: Object.myValues(testArrayWords),
+            },
+            {
+                label: 'testArrayDuplicates',
+                native: Object.values(testArrayDuplicates),
+                custom: Object.myValues(testArrayDuplicates),
+            },
+        ],
     }
 ];
 
