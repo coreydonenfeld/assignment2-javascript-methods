@@ -209,7 +209,21 @@ Array.prototype.myLastIndexOf = function(searchElement) {
 
 // KEYS //
 Object.myKeys = function(object) {
-  // Place your code here.
+    // Check that object is an object.
+    if (typeof object !== 'object') {
+        throw new TypeError(`${object} is not an object`);
+    }
+
+    let keys = [];
+
+    for (const key in object) {
+        // Ignore inherited properties (like our templated functions for Array).
+        if (object.hasOwnProperty(key)) {
+            keys.push(key);
+        }
+    }
+
+    return keys;
 };
 
 // VALUES //
