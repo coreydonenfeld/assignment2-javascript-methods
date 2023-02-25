@@ -227,5 +227,17 @@ Object.myKeys = function(object) {
 
 // VALUES //
 Object.myValues = function(object) {
-  // Place your code here.
+    // Check that object is an object.
+    if (typeof object !== 'object') {
+        throw new TypeError(`${object} is not an object`);
+    }
+
+    let values = [];
+    let keys = Object.myKeys(object);
+
+    for (let i = 0; i < keys.length; i++) {
+        values.push(object[keys[i]]);
+    }
+
+    return values;
 };
