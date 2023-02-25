@@ -225,7 +225,29 @@ Object.myKeys = function(object) {
     return keys;
 };
 
-// VALUES //
+/**
+ * My Values.
+ * 
+ * myValues returns an array of the object's values.
+ * 
+ * @requires Object.myKeys
+ * @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values MDN Docs on Native Implementation}
+ * 
+ * @param {Object} object The object to get the values from.
+ * @returns {Array} An array of the object's values.
+ */
 Object.myValues = function(object) {
-  // Place your code here.
+    // Check that object is an object.
+    if (typeof object !== 'object') {
+        throw new TypeError(`${object} is not an object`);
+    }
+
+    let values = [];
+    let keys = Object.myKeys(object);
+
+    for (let i = 0; i < keys.length; i++) {
+        values.push(object[keys[i]]);
+    }
+
+    return values;
 };
